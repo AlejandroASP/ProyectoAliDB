@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -51,5 +53,9 @@ public class ProductofferService {
     private Productoffer requireOne(Integer id) {
         return productofferRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Resource not found: " + id));
+    }
+
+    public List<Productoffer> findAll() {
+        return productofferRepository.findAll();
     }
 }
