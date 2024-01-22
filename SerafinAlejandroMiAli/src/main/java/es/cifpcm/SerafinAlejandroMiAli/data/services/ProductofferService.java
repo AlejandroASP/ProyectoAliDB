@@ -1,6 +1,7 @@
 package es.cifpcm.SerafinAlejandroMiAli.data.services;
 
 import es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository;
+import es.cifpcm.SerafinAlejandroMiAli.model.Municipios;
 import es.cifpcm.SerafinAlejandroMiAli.model.Productoffer;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
@@ -57,5 +58,13 @@ public class ProductofferService {
 
     public List<Productoffer> findAll() {
         return productofferRepository.findAll();
+    }
+
+    public Productoffer findById(int id) {
+        return productofferRepository.findById(id).orElse(null);
+    }
+
+    public List<Productoffer> findByMunicipioIn(List<Municipios> municipios) {
+        return productofferRepository.findByMunicipioIn(municipios);
     }
 }

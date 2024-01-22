@@ -25,5 +25,19 @@
         <td th:text="${producto.productStock}"></td>
     </tr>
 </table>
+<a th:href="@{/inicio}">
+    <button type="button">Volver a la página de inicio</button>
+</a>
+<a th:href="@{/create}">
+    <button type="button">Crea un producto</button>
+</a>
+
+<h1>¿Quiere eliminar un producto? seleccione uno</h1>
+<form action="#" th:action="@{/producto/delete}" method="post">
+    <select name="productId">
+        <option th:each="producto : ${productos}" th:value="${producto.productId}" th:text="${producto.productName}"></option>
+    </select>
+    <input type="submit" value="Eliminar Producto">
+</form>
 </body>
 </html>

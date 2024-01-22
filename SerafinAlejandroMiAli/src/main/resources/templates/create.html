@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Inicio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-
+<h1>Bienvenido a nuestra tienda</h1>
+<form action="#" th:action="@{/producto/create}" th:object="${product}" method="post">
+    <input type="text" th:field="*{productName}" placeholder="Nombre del producto">
+    <input type="number" th:field="*{productPrice}" placeholder="Precio del producto">
+    <input type="text" th:field="*{productPicture}" placeholder="URL de la imagen del producto">
+    <input type="number" th:field="*{idMunicipio}" placeholder="ID del municipio">
+    <input type="number" th:field="*{productStock}" placeholder="Stock del producto">
+    <input type="submit" value="Crear Producto">
+</form>
 </body>
 </html>

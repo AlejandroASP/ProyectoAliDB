@@ -1,6 +1,7 @@
 package es.cifpcm.SerafinAlejandroMiAli.data.services;
 
 import es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProvinciasRepository;
+import es.cifpcm.SerafinAlejandroMiAli.model.Productoffer;
 import es.cifpcm.SerafinAlejandroMiAli.model.Provincias;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -15,6 +17,7 @@ public class ProvinciasService {
 
     @Autowired
     private ProvinciasRepository provinciasRepository;
+
 
     public Integer save(@Valid Provincias vO) {
         Provincias bean = new Provincias();
@@ -52,4 +55,5 @@ public class ProvinciasService {
         return provinciasRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Resource not found: " + id));
     }
+    public List<Provincias> findAll() {return provinciasRepository.findAll();}
 }
