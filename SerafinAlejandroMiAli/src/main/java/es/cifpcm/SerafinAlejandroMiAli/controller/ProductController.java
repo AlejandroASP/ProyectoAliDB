@@ -54,19 +54,19 @@ public class ProductController {
             return "redirect:/error";
         }
     }
-    @GetMapping("/provincia")
-    public String getProvincias(Model model) {
-        List<Provincias> provincias = provinciasService.findAll();
-        model.addAttribute("provincias", provincias);
-        return "provincia";
-    }
+//    @GetMapping("/provincia")
+//    public String getProvincias(Model model) {
+//        List<Provincias> provincias = provinciasService.findAll();
+//        model.addAttribute("provincias", provincias);
+//        return "provincia";
+//    }
 
-    @GetMapping("/producto")
-    public String getProductos(@RequestParam("provinciaId") int provinciaId, Model model) {
-        List<Municipios> municipios = municipiosService.findByProvinciaId(provinciaId);
-        List<Productoffer> productos = productService.findByMunicipioIn(municipios);
-        model.addAttribute("productos", productos);
-        return "producto";
-    }
+//    @GetMapping("/producto")
+//    public String getProductos(@RequestParam("provinciaId") int provinciaId, Model model) {
+//        List<Municipios> municipios = municipiosService.findByProvinciaId(provinciaId);
+//        List<Productoffer> productos = productService.findByMunicipioIn(municipios);
+//        model.addAttribute("productos", productos);
+//        return "producto";
+//    }
 
 }

@@ -1,0 +1,207 @@
+23-Jan-2024 08:18:49.959 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/10.1.17
+23-Jan-2024 08:18:49.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Dec 7 2023 23:31:38 UTC
+23-Jan-2024 08:18:49.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     10.1.17.0
+23-Jan-2024 08:18:49.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+23-Jan-2024 08:18:49.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+23-Jan-2024 08:18:49.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+23-Jan-2024 08:18:49.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Program Files\Java\jdk-20
+23-Jan-2024 08:18:49.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       20.0.1+9-29
+23-Jan-2024 08:18:49.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+23-Jan-2024 08:18:49.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\2dawa\Documents\GitHub\ProyectoAliDB\SerafinAlejandroMiAli
+23-Jan-2024 08:18:49.965 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\2dawa\Downloads\apache-tomcat-10.1.17
+23-Jan-2024 08:18:49.979 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+23-Jan-2024 08:18:49.980 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+23-Jan-2024 08:18:49.980 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+23-Jan-2024 08:18:49.980 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+23-Jan-2024 08:18:49.981 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+23-Jan-2024 08:18:49.981 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\2dawa\Downloads\apache-tomcat-10.1.17
+23-Jan-2024 08:18:49.981 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\2dawa\Documents\GitHub\ProyectoAliDB\SerafinAlejandroMiAli
+23-Jan-2024 08:18:49.981 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\2dawa\Documents\GitHub\ProyectoAliDB\SerafinAlejandroMiAli\temp
+23-Jan-2024 08:18:49.982 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\2dawa\Documents\GitHub\ProyectoAliDB\SerafinAlejandroMiAli\conf\logging.properties
+23-Jan-2024 08:18:49.982 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+23-Jan-2024 08:18:49.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3\lib\idea_rt.jar=56793:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3\bin
+23-Jan-2024 08:18:49.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+23-Jan-2024 08:18:49.983 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stdout.encoding=UTF-8
+23-Jan-2024 08:18:49.984 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dsun.stderr.encoding=UTF-8
+23-Jan-2024 08:18:49.987 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Cargada la biblioteca nativa APR de Apache Tomcat [2.0.6] con la versión APR [1.7.4].
+23-Jan-2024 08:18:49.992 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL inicializado correctamente [OpenSSL 3.0.11 19 Sep 2023]
+23-Jan-2024 08:18:50.387 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+23-Jan-2024 08:18:50.400 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [657] milliseconds
+23-Jan-2024 08:18:50.447 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+23-Jan-2024 08:18:50.447 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.17]
+23-Jan-2024 08:18:50.458 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\2dawa\Documents\GitHub\ProyectoAliDB\SerafinAlejandroMiAli\conf\Catalina\localhost\SerafinAlejandroMiAli.xml]
+23-Jan-2024 08:18:54.558 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+23-Jan-2024 08:19:03.382 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error durante el despliegue del descriptor de configuración [C:\Users\2dawa\Documents\GitHub\ProyectoAliDB\SerafinAlejandroMiAli\conf\Catalina\localhost\SerafinAlejandroMiAli.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:686)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:712)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:643)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1939)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:536)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:426)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1661)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:114)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:402)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:345)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:893)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:917)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:795)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:347)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/SerafinAlejandroMiAli]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		... 35 more
+	Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController': Unsatisfied dependency expressed through field 'productService': Error creating bean with name 'productofferService': Unsatisfied dependency expressed through field 'productofferRepository': Error creating bean with name 'productofferRepository' defined in es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository.findByMunicipioIn(java.util.List); Reason: Failed to create query for method public abstract java.util.List es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository.findByMunicipioIn(java.util.List); No property 'municipio' found for type 'Productoffer'
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+		at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1418)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+		at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+		at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959)
+		at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+		at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+		at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+		at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+		at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+		at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.run(SpringBootServletInitializer.java:174)
+		at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.createRootApplicationContext(SpringBootServletInitializer.java:154)
+		at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.onStartup(SpringBootServletInitializer.java:96)
+		at org.springframework.web.SpringServletContainerInitializer.onStartup(SpringServletContainerInitializer.java:171)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4850)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 36 more
+	Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productofferService': Unsatisfied dependency expressed through field 'productofferRepository': Error creating bean with name 'productofferRepository' defined in es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository.findByMunicipioIn(java.util.List); Reason: Failed to create query for method public abstract java.util.List es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository.findByMunicipioIn(java.util.List); No property 'municipio' found for type 'Productoffer'
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+		at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1418)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+		at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+		at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+		... 59 more
+	Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productofferRepository' defined in es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository.findByMunicipioIn(java.util.List); Reason: Failed to create query for method public abstract java.util.List es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository.findByMunicipioIn(java.util.List); No property 'municipio' found for type 'Productoffer'
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+		at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+		at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+		... 73 more
+	Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.util.List es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository.findByMunicipioIn(java.util.List); Reason: Failed to create query for method public abstract java.util.List es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository.findByMunicipioIn(java.util.List); No property 'municipio' found for type 'Productoffer'
+		at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101)
+		at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:115)
+		at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:99)
+		at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:88)
+		at java.base/java.util.Optional.map(Optional.java:260)
+		at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:88)
+		at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:357)
+		at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:279)
+		at org.springframework.data.util.Lazy.getNullable(Lazy.java:135)
+		at org.springframework.data.util.Lazy.get(Lazy.java:113)
+		at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:285)
+		at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769)
+		... 83 more
+	Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract java.util.List es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository.findByMunicipioIn(java.util.List); No property 'municipio' found for type 'Productoffer'
+		at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:106)
+		at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:124)
+		at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:258)
+		at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:95)
+		at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:111)
+		... 95 more
+	Caused by: org.springframework.data.mapping.PropertyReferenceException: No property 'municipio' found for type 'Productoffer'
+		at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:90)
+		at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:443)
+		at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:419)
+		at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:372)
+		at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330)
+		at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:354)
+		at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:332)
+		at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81)
+		at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:259)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1006)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:260)
+		at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:389)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1006)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:390)
+		at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:103)
+		at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:100)
+		... 99 more
+23-Jan-2024 08:19:03.393 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\2dawa\Documents\GitHub\ProyectoAliDB\SerafinAlejandroMiAli\conf\Catalina\localhost\SerafinAlejandroMiAli.xml] has finished in [12.930] ms
+23-Jan-2024 08:19:03.395 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+23-Jan-2024 08:19:03.410 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [13008] milliseconds
+23-Jan-2024 08:19:06.977 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+23-Jan-2024 08:19:06.995 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+23-Jan-2024 08:19:06.996 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+23-Jan-2024 08:19:07.001 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+23-Jan-2024 08:19:07.008 WARNING [Thread-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [SerafinAlejandroMiAli] registró el conductor JDBC [com.mysql.cj.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+23-Jan-2024 08:19:07.010 WARNING [Thread-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [SerafinAlejandroMiAli] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1847)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:93)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1623)

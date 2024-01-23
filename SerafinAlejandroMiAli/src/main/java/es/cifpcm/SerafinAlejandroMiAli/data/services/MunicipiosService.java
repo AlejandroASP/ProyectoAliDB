@@ -54,6 +54,6 @@ public class MunicipiosService {
                 .orElseThrow(() -> new NoSuchElementException("Resource not found: " + id));
     }
 
-    public List<Municipios> findByProvinciaId(int provinciaId) {
-    }
+//    public List<Municipios> findByProvinciaId(int provinciaId) {
+//    }
 }
