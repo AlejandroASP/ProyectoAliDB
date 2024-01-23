@@ -42,6 +42,7 @@ public class Municipios implements Serializable {
         return idMunicipio;
     }
 
+
     public void setIdProvincia(Integer idProvincia) {
         this.idProvincia = idProvincia;
     }

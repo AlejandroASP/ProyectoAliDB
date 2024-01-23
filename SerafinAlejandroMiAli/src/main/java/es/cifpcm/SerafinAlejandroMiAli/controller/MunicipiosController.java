@@ -3,13 +3,19 @@ package es.cifpcm.SerafinAlejandroMiAli.controller;
 import es.cifpcm.SerafinAlejandroMiAli.data.services.MunicipiosService;
 
 import es.cifpcm.SerafinAlejandroMiAli.model.Municipios;
+import es.cifpcm.SerafinAlejandroMiAli.model.Provincias;
 import jakarta.validation.Valid;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Validated
 @Controller
@@ -44,4 +50,21 @@ public class MunicipiosController {
     public Page<Municipios> query(@Valid Municipios vO) {
         return municipiosService.query(vO);
     }
+    @GetMapping("/seleccionarProvincia")
+    public String seleccionarProvincia(@RequestParam(name = "idProvincia", required = false, defaultValue = "-1") int idProvincia, Model model) {
+        List<Provincias> provincias = municipiosService.getAllProvincias();
+        model.addAttribute("provincias", provincias);
+        model.addAttribute("provinciaId", idProvincia);
+        if (idProvincia > 0) {
+            List<Municipios> municipios = municipiosService.obtenerMunicipiosPorProvincia(idProvincia);
+            model.addAttribute("municipios", municipios);
+        }
+        return "seleccionar-provincia";
+    }
+    @GetMapping("/cargarMunicipios")
+    @ResponseBody
+    public List<Municipios> getMunicipiosByProvincia(@RequestParam("idProvincia") int idProvincia) {
+        return municipiosService.obtenerMunicipiosPorProvincia(idProvincia);
+    }
+
 }

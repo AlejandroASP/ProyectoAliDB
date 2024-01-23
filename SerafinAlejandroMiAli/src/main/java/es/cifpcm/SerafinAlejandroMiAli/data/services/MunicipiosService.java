@@ -1,7 +1,9 @@
 package es.cifpcm.SerafinAlejandroMiAli.data.services;
 
 import es.cifpcm.SerafinAlejandroMiAli.data.repositories.MunicipiosRepository;
+import es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProvinciasRepository;
 import es.cifpcm.SerafinAlejandroMiAli.model.Municipios;
+import es.cifpcm.SerafinAlejandroMiAli.model.Provincias;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,8 @@ public class MunicipiosService {
 
     @Autowired
     private MunicipiosRepository municipiosRepository;
+    @Autowired
+    private ProvinciasRepository provinciasRepository;
 
     public Integer save(@Valid Municipios vO) {
         Municipios bean = new Municipios();
@@ -59,5 +63,10 @@ public class MunicipiosService {
         return municipiosRepository.findAll();
     }
 
+    public List<Municipios> obtenerMunicipiosPorProvincia(int idProvincia) {
+        return municipiosRepository.findByProvinciaId(idProvincia);
+    }
 
+
+    public List<Provincias> getAllProvincias() {return provinciasRepository.findAll();}
 }

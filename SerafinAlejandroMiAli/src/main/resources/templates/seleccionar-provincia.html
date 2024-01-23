@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
+<head>
+    <title>Seleccionar Provincia</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Bienvenido a nuestra tienda</h1>
+<form th:action="@{/municipios/seleccionarProvincia}" method="get">
+    <select name="idProvincia" id="provinciaSelect" onchange="this.form.submit()">
+        <option value="-1">Seleccione una provincia</option>
+        <option th:each="provincia : ${provincias}" th:value="${provincia.idProvincia}" th:text="${provincia.nombre}" th:selected="${provincia.idProvincia == provinciaId}"></option>
+    </select>
+</form>
+<form action="#" th:action="@{/municipios/cargarMunicipios}" method="get">
+    <select name="idMunicipio" id="municipioSelect">
+        <option value="-1">Seleccione un municipio</option>
+        <option th:each="municipio : ${municipios}" th:value="${municipio.idMunicipio}" th:text="${municipio.nombre}"></option>
+    </select>
+</form>
+
+
+</body>
+</html>
