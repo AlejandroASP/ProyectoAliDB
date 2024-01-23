@@ -15,8 +15,12 @@ public class MainController {
     public String usuario() {
         return "/usuario/create";
     }
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String login() {
         return "login";
+    }
+    @GetMapping("/order/pedido")
+    public String order() {
+        return "/order/pedido";
     }
 }

@@ -7,11 +7,14 @@
 </head>
 <body>
 <h1>Bienvenido a nuestra tienda</h1>
-<form action="#" th:action="@{/producto/create}" th:object="${product}" method="post">
+<form action="#" th:action="@{/producto/seleccionarProvincia}" th:object="${product}" method="post">
     <input type="text" th:field="*{productName}" placeholder="Nombre del producto">
     <input type="number" th:field="*{productPrice}" placeholder="Precio del producto">
     <input type="text" th:field="*{productPicture}" placeholder="URL de la imagen del producto">
-    <input type="number" th:field="*{idMunicipio}" placeholder="ID del municipio">
+
+    <select id="municipio" th:field="*{idMunicipio}">
+        <option th:each="municipio : ${municipios}" th:value="${municipio.idMunicipio}" th:text="${municipio.nombre}"></option>
+    </select>
     <input type="number" th:field="*{productStock}" placeholder="Stock del producto">
     <input type="submit" value="Crear Producto">
 </form>

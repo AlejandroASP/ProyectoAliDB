@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -54,6 +55,9 @@ public class MunicipiosService {
                 .orElseThrow(() -> new NoSuchElementException("Resource not found: " + id));
     }
 
-//    public List<Municipios> findByProvinciaId(int provinciaId) {
-//    }
+    public List<Municipios> getAllMunicipios() {
+        return municipiosRepository.findAll();
+    }
+
+
 }

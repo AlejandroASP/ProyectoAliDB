@@ -64,7 +64,4 @@ public class ProductofferService {
         return productofferRepository.findById(id).orElse(null);
     }
 
-    public List<Productoffer> findByMunicipioIn(List<Municipios> municipios) {
-        return productofferRepository.findByMunicipioIn(municipios);
-    }
 }

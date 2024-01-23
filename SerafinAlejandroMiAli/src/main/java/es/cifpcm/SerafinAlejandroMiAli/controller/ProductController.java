@@ -17,6 +17,7 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProvinciasService provinciasService;
+    @Autowired
     private MunicipiosService municipiosService;
     @Autowired
     private ProductofferService productService;
@@ -27,6 +28,7 @@ public class ProductController {
         model.addAttribute("productos", productos);
         return "producto";
     }
+
     @GetMapping("/inicio")
     public String inicio() {
         return "inicio";
@@ -34,6 +36,10 @@ public class ProductController {
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("product", new Productoffer());
+        List<Municipios> municipios = municipiosService.getAllMunicipios();
+        List<Provincias> provincias = provinciasService.obtenerProvincias();
+        model.addAttribute("municipios", municipios);
+        model.addAttribute("provincias", provincias);
         return "create";
     }
 
@@ -54,19 +60,11 @@ public class ProductController {
             return "redirect:/error";
         }
     }
-//    @GetMapping("/provincia")
-//    public String getProvincias(Model model) {
-//        List<Provincias> provincias = provinciasService.findAll();
-//        model.addAttribute("provincias", provincias);
-//        return "provincia";
-//    }
-
-//    @GetMapping("/producto")
-//    public String getProductos(@RequestParam("provinciaId") int provinciaId, Model model) {
-//        List<Municipios> municipios = municipiosService.findByProvinciaId(provinciaId);
-//        List<Productoffer> productos = productService.findByMunicipioIn(municipios);
-//        model.addAttribute("productos", productos);
-//        return "producto";
-//    }
-
+    @GetMapping("/seleccionarProvincia")
+    public String filter(Model model) {
+        model.addAttribute("product", new Productoffer());
+        List<Provincias> provincias = provinciasService.obtenerProvincias();
+        model.addAttribute("provincias", provincias);
+        return "create";
+    }
 }

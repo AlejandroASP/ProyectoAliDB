@@ -55,5 +55,5 @@ public class ProvinciasService {
         return provinciasRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Resource not found: " + id));
     }
-    public List<Provincias> findAll() {return provinciasRepository.findAll();}
+    public List<Provincias> obtenerProvincias() {return provinciasRepository.findAll();}
 }

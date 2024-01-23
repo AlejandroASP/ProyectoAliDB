@@ -1,5 +1,6 @@
 package es.cifpcm.SerafinAlejandroMiAli.model;
 
+import com.fasterxml.jackson.annotation.JacksonInject;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -95,4 +96,5 @@ public class Municipios implements Serializable {
                 "nombre=" + nombre + '\'' +
                 '}';
     }
+
 }
