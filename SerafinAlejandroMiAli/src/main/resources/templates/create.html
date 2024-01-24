@@ -8,11 +8,10 @@
 <body>
 <h1>Bienvenido a nuestra tienda</h1>
 
-<form th:action="@{/producto/crear}" th:object="${product}" method="post">
+<form th:action="@{/producto/create}" th:object="${product}" method="post">
     <input type="text" th:field="*{productName}" placeholder="Nombre del producto">
     <input type="number" th:field="*{productPrice}" placeholder="Precio del producto">
     <input type="text" th:field="*{productPicture}" placeholder="URL de la imagen del producto">
-
     <input type="number" th:field="*{productStock}" placeholder="Stock del producto">
     <input type="submit" value="Crear Producto">
 </form>

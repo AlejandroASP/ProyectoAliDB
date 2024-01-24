@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ver Carrito</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+background-color: #C0C0C0; /* Fondo gris */
+text-align: center;
+}
+
+#content {
+    margin: 20px auto; /* Centrar el contenido en la página */
+    max-width: 600px; /* Ancho máximo del contenido */
+}
+
+h1 {
+    color: #000; /* Color del texto negro */
+}
+
+.button-container {
+    display: inline-block;
+    margin: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #87CEEB; /* Azul claro */
+    color: #000; /* Texto negro */
+    border: 1px solid #000; /* Borde negro */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none;
+    cursor: pointer;
+}
+        .form-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Carrito de Compras</h1>
+<ul th:if="${productosEnCarrito != null}">
+    <li th:each="producto : ${productosEnCarrito}">
+        <span th:text="${producto.productName + ' - ' + producto.productPrice}"></span>
+    </li>
+</ul>
+
+<a th:href="@{/inicio}" class="button">Volver a la página de inicio</a>
+
+</body>
+</html>

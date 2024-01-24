@@ -3,6 +3,7 @@ package es.cifpcm.SerafinAlejandroMiAli.data.services;
 import es.cifpcm.SerafinAlejandroMiAli.data.repositories.MunicipiosRepository;
 import es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProvinciasRepository;
 import es.cifpcm.SerafinAlejandroMiAli.model.Municipios;
+import es.cifpcm.SerafinAlejandroMiAli.model.Productoffer;
 import es.cifpcm.SerafinAlejandroMiAli.model.Provincias;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
@@ -69,4 +70,5 @@ public class MunicipiosService {
 
 
     public List<Provincias> getAllProvincias() {return provinciasRepository.findAll();}
+
 }

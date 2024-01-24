@@ -59,7 +59,7 @@ public class MunicipiosController {
             List<Municipios> municipios = municipiosService.obtenerMunicipiosPorProvincia(idProvincia);
             model.addAttribute("municipios", municipios);
         }
-        return "seleccionar-provincia";
+        return "order/pedido";
     }
     @GetMapping("/cargarMunicipios")
     @ResponseBody

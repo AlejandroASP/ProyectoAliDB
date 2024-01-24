@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<html lang="es">
 <head>
     <title>Inicio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="ruta/del/archivo/tu-estilo.css">
+    <style>
+body {
+    text-align: center;
+    background-color: #808080;
+}
+
+h1 {
+    color: white; /* Color negro */
+}
+
+a {
+    text-decoration: none;
+}
+
+.button-container {
+    display: inline-block;
+    margin: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ADD8E6; /* Azul claro */
+    color: #000; /* Color negro */
+    border: 1px solid #000; /* Borde negro */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+}
+
+/* Estilo para cuando se pasa el ratón por encima del botón */
+.button:hover {
+    background-color: #87CEFA; /* Azul claro más claro */
+}
+
+    </style>
 </head>
 <body>
-<h1>Bienvenido a nuestra tienda</h1>
-<a th:href="@{/municipios/seleccionarProvincia}">
-    <button type="button">Seleccionar Provincia y Municipio</button>
-</a>
-<a th:href="@{/producto}">
-    <button type="button">Ver Lista de Productos</button>
-</a>
-<a th:href="@{/login}">
-    <button type="button">Inicia sesión</button>
-</a>
-<a th:href="@{/usuario/create}">
-    <button type="button">Registrate</button>
-</a>
-<a th:href="@{/order/pedido}">
-    <button type="button">Realiza un Pedido</button>
-</a>
+<div id="content">
+    <h1>Bienvenido a nuestra tienda</h1>
+    <div class="button-container">
+        <a th:href="@{/producto}" class="button">Ver Lista de Productos</a>
+    </div>
+
+    <div class="button-container">
+        <a th:href="@{/login}" class="button">Inicia sesión</a>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/usuario/create}" class="button">Registrate</a>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/municipios/seleccionarProvincia}" class="button">Realizar Pedido</a>
+    </div>
+</div>
 </body>
 </html>

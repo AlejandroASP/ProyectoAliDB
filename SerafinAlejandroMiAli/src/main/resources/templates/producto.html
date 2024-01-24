@@ -1,46 +1,116 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<html lang="es">
 <head>
     <title>Listado de Productos</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="ruta/del/archivo/tu-estilo.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: #808080; /* Fondo gris */
+            color: #333; /* Color de texto principal */
+        }
+
+        h1 {
+            color: #333; /* Color de texto principal */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #000; /* Borde negro */
+            padding: 8px;
+            text-align: left;
+            background-color:white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .button-container {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ADD8E6; /* Azul claro */
+            color: #000; /* Color negro */
+            border: 1px solid #000; /* Borde negro */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer;
+        }
+
+        /* Estilo para cuando se pasa el ratón por encima del botón */
+        .button:hover {
+            background-color: #87CEFA; /* Azul claro más claro */
+        }
+        .delete-button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #FF0000; /* Rojo */
+            color: #FFF; /* Texto blanco */
+            border: 1px solid #FFF; /* Borde blanco */
+            border-radius: 3px; /* Bordes redondeados */
+            cursor: pointer;
+        }
+
+        .edit-button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #0000FF; /* Azul */
+            color: #FFF; /* Texto blanco */
+            border: 1px solid #FFF; /* Borde blanco */
+            border-radius: 3px; /* Bordes redondeados */
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<h1>Productos</h1>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Precio</th>
-        <th>Imágen</th>
-        <th>IdMunicipio</th>
-        <th>Stock</th>
-    </tr>
-    <tr th:each="producto : ${productos}">
-        <td th:text="${producto.productId}"></td>
-        <td th:text="${producto.productName}"></td>
-        <td th:text="${producto.productPrice}"></td>
-        <td th:text="${producto.productPicture}"></td>
-        <td th:text="${producto.idMunicipio}"></td>
-        <td th:text="${producto.productStock}"></td>
-    </tr>
-</table>
-<a th:href="@{/inicio}">
-    <button type="button">Volver a la página de inicio</button>
-</a>
-<a th:href="@{/create}">
-    <button type="button">Crea un producto</button>
-</a>
-<a th:href="@{/order/pedido}">
-    <button type="button">Realiza un Pedido</button>
-</a>
-
-<h1>¿Quiere eliminar un producto? seleccione uno</h1>
-<form action="#" th:action="@{/producto/delete}" method="post">
-    <select name="productId">
-        <option th:each="producto : ${productos}" th:value="${producto.productId}" th:text="${producto.productName}"></option>
-    </select>
-    <input type="submit" value="Eliminar Producto">
-</form>
+<div id="content">
+    <h1>Productos</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Imágen</th>
+            <th>IdMunicipio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+        </tr>
+        <tr th:each="producto : ${productos}">
+            <td th:text="${producto.productId}"></td>
+            <td th:text="${producto.productName}"></td>
+            <td th:text="${producto.productPrice}"></td>
+            <td th:text="${producto.productPicture}"></td>
+            <td th:text="${producto.idMunicipio}"></td>
+            <td th:text="${producto.productStock}"></td>
+            <td>
+                <div class="button-container">
+                    <a th:href="@{#}" class="delete-button">Eliminar</a>
+                </div>
+                <div class="button-container">
+                    <a th:href="@{#}" class="edit-button">Editar</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="button-container">
+        <a th:href="@{/inicio}" class="button">Volver a la página de inicio</a>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/create}" class="button">Crea un producto</a>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/municipios/seleccionarProvincia}" class="button">Realizar Pedido</a>
+    </div>
+</div>
 </body>
 </html>

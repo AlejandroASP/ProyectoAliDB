@@ -2,6 +2,7 @@ package es.cifpcm.SerafinAlejandroMiAli.controller;
 
 import es.cifpcm.SerafinAlejandroMiAli.data.services.MunicipiosService;
 import es.cifpcm.SerafinAlejandroMiAli.data.services.ProvinciasService;
+import es.cifpcm.SerafinAlejandroMiAli.model.Carrito;
 import es.cifpcm.SerafinAlejandroMiAli.model.Municipios;
 import es.cifpcm.SerafinAlejandroMiAli.model.Productoffer;
 import es.cifpcm.SerafinAlejandroMiAli.data.services.ProductofferService;
@@ -48,43 +49,11 @@ public class ProductController {
         productService.save(product);
         return "redirect:/producto";
     }
-    @PostMapping("/producto/delete")
-    public String deleteProduct(@RequestParam("productId") int productId) {
-        Productoffer product = productService.findById(productId);
-        if (product != null) {
-            productService.delete(product.getProductId());
-            return "redirect:/producto";
-        } else {
-            // Aquí puedes manejar el caso en que el producto no se encuentra
-            // Por ejemplo, podrías redirigir a una página de error personalizada
-            return "redirect:/error";
-        }
+    @GetMapping("/verCarrito")
+    public String verCarrito(@ModelAttribute("carrito") Carrito carrito, Model model) {
+        List<Productoffer> productosEnCarrito = carrito.getProductos();
+        model.addAttribute("productosEnCarrito", productosEnCarrito);
+        return "verCarrito";
     }
-//    @GetMapping("/crear")
-//    public String mostrarFormulario(Model model) {
-//        List<Provincias> provincias = municipiosService.getAllProvincias(); // Obtener provincias desde el servicio
-//        model.addAttribute("provincias", provincias);
-//        model.addAttribute("product", new Productoffer()); // Instancia de tu clase de producto
-//        return "create";
-//    }
-//
-//    @PostMapping("/crear")
-//    public String crearProducto(@ModelAttribute("product") @Valid Productoffer product, BindingResult result,
-//                                @RequestParam("idProvincia") int idProvincia,
-//                                @RequestParam("idMunicipio") int idMunicipio, Model model) {
-//        if (result.hasErrors()) {
-//            // Manejar errores de validación
-//            return "create";
-//        }
-//
-//        // Setear el ID de provincia y municipio en el producto
-//        product.setProvincia(idProvincia);
-//        product.setIdMunicipio(idMunicipio);
-//
-//        // Guardar el producto en la base de datos
-//        productService.save(product);
-//
-//        // Redirigir a la página de éxito o a donde desees
-//        return "redirect:/producto/exito";
-//    }
+
 }

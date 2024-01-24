@@ -64,4 +64,7 @@ public class ProductofferService {
         return productofferRepository.findById(id).orElse(null);
     }
 
+    public List<Productoffer> getProductosByMunicipio(int idMunicipio) {
+        return productofferRepository.findProductosByMunicipio(idMunicipio);
+    }
 }
