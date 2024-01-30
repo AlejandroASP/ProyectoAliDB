@@ -1,20 +1,90 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
     <title>Crear producto</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+        background-color: #C0C0C0; /* Fondo gris */
+        text-align: center;
+        }
+
+        #content {
+            margin: 20px auto; /* Centrar el contenido en la página */
+            max-width: 600px; /* Ancho máximo del contenido */
+        }
+
+        h1 {
+            color: #000; /* Color del texto negro */
+        }
+
+        .button-container {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #87CEEB; /* Azul claro */
+            color: #000; /* Texto negro */
+            border: 1px solid #000; /* Borde negro */
+            border-radius: 5px; /* Bordes redondeados */
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .product-table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .product-table th, .product-table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .product-table th {
+            background-color: #ffffff; /* Fondo blanco */
+        }
+
+        .product-table td {
+            background-color: #ffffff; /* Fondo blanco */
+        }
+    </style>
 </head>
 <body>
-<h1>Bienvenido a nuestra tienda</h1>
+<div id="content">
+    <h1>Bienvenido a nuestra tienda</h1>
 
-<form th:action="@{/producto/create}" th:object="${product}" method="post">
-    <input type="text" th:field="*{productName}" placeholder="Nombre del producto">
-    <input type="number" th:field="*{productPrice}" placeholder="Precio del producto">
-    <input type="text" th:field="*{productPicture}" placeholder="URL de la imagen del producto">
-    <input type="number" th:field="*{productStock}" placeholder="Stock del producto">
-    <input type="submit" value="Crear Producto">
-</form>
+    <form th:action="@{/municipios/seleccionarProvincia}" method="get">
+        <select name="idProvincia" id="provinciaSelect" onchange="this.form.submit()">
+            <option value="-1">Seleccione una provincia</option>
+            <option th:each="provincia : ${provincias}" th:value="${provincia.idProvincia}" th:text="${provincia.nombre}" th:selected="${provincia.idProvincia == provinciaId}"></option>
+        </select>
+        <input type="hidden" name="vista" value="create">
+    </form>
 
+    <form th:action="@{/productoffer/filtrarPorMunicipio}" method="get">
+        <select name="idMunicipio" id="muni" onchange="this.form.submit()">
+            <option value="-1">Seleccione un municipio</option>
+            <option th:each="municipio : ${municipios}" th:value="${municipio.idMunicipio}" th:text="${municipio.nombre}" th:selected="${municipio.idMunicipio == municipioId}"></option>
+        </select>
+        <input type="hidden" name="vista" value="create">
+        <p th:text="'Municipio seleccionado: ' + ${municipioNombre}"></p>
+    </form>
+
+
+    <form th:action="@{/producto/create}" th:object="${product}" method="post">
+        <input type="text" th:field="*{productName}" placeholder="Nombre del producto">
+        <input type="number" th:field="*{productPrice}" placeholder="Precio del producto">
+        <input type="text" th:field="*{productPicture}" placeholder="URL de la imagen del producto">
+        <input type="number" th:field="*{productStock}" placeholder="Stock del producto">
+        <input type="submit" value="Crear Producto">
+    </form>
+
+
+</div>
 </body>
 </html>

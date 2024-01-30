@@ -3,6 +3,7 @@ package es.cifpcm.SerafinAlejandroMiAli.controller;
 import es.cifpcm.SerafinAlejandroMiAli.data.services.MunicipiosService;
 
 import es.cifpcm.SerafinAlejandroMiAli.model.Municipios;
+import es.cifpcm.SerafinAlejandroMiAli.model.Productoffer;
 import es.cifpcm.SerafinAlejandroMiAli.model.Provincias;
 import jakarta.validation.Valid;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -51,16 +52,25 @@ public class MunicipiosController {
         return municipiosService.query(vO);
     }
     @GetMapping("/seleccionarProvincia")
-    public String seleccionarProvincia(@RequestParam(name = "idProvincia", required = false, defaultValue = "-1") int idProvincia, Model model) {
+    public String seleccionarProvincia(@RequestParam(name = "idProvincia", required = false, defaultValue = "-1") int idProvincia, Model model, @RequestParam(name = "vista", required = false, defaultValue = "order/pedido") String vista) {
         List<Provincias> provincias = municipiosService.getAllProvincias();
         model.addAttribute("provincias", provincias);
         model.addAttribute("provinciaId", idProvincia);
+        String provinciaNombre = provincias.stream().filter(p -> p.getIdProvincia() == idProvincia).findFirst().map(Provincias::getNombre).orElse(null);
+        model.addAttribute("provinciaNombre", provinciaNombre);
+        List<Municipios> municipios = new ArrayList<>();
         if (idProvincia > 0) {
-            List<Municipios> municipios = municipiosService.obtenerMunicipiosPorProvincia(idProvincia);
-            model.addAttribute("municipios", municipios);
+            municipios = municipiosService.obtenerMunicipiosPorProvincia(idProvincia);
         }
-        return "order/pedido";
+        model.addAttribute("municipios", municipios);
+        if (vista.equals("create")) {
+            model.addAttribute("product", new Productoffer());
+            return "create";
+        } else {
+            return "order/pedido";
+        }
     }
+
     @GetMapping("/cargarMunicipios")
     @ResponseBody
     public List<Municipios> getMunicipiosByProvincia(@RequestParam("idProvincia") int idProvincia) {

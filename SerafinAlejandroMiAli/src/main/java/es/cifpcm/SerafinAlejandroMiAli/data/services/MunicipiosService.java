@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class MunicipiosService {
@@ -70,5 +71,14 @@ public class MunicipiosService {
 
 
     public List<Provincias> getAllProvincias() {return provinciasRepository.findAll();}
+
+    public Integer getProvinciaByMunicipio(Integer municipioId) {
+        Optional<Municipios> municipio = municipiosRepository.findById(municipioId);
+        if (municipio.isPresent()) {
+            return municipio.get().getIdProvincia();
+        } else {
+            throw new IllegalArgumentException("No se encontró el municipio con id: " + municipioId);
+        }
+    }
 
 }

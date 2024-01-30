@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
     <title>Pedido</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -67,7 +67,7 @@
     <form th:action="@{/productoffer/filtrarPorMunicipio}" method="get">
         <select name="idMunicipio" id="muni" onchange="this.form.submit()">
             <option value="-1">Seleccione un municipio</option>
-            <option th:each="municipio : ${municipios}" th:value="${municipio.idMunicipio}" th:text="${municipio.nombre}"></option>
+            <option th:each="municipio : ${municipios}" th:value="${municipio.idMunicipio}" th:text="${municipio.nombre}" th:selected="${municipio.idMunicipio == municipioId}"></option>
         </select>
     </form>
     <h2>Productos por Municipio</h2>
@@ -99,7 +99,7 @@
 
 </div>
 <div class="button-container">
-    <a th:href="@{/inicio}" class="button">Volver a la página de inicio</a>
+    <a th:href="@{/product/inicio}" class="button">Volver a la página de inicio</a>
 </div>
 <div class="button-container">
     <a th:href="@{../producto}" class="button">Ir a la página de productos</a>

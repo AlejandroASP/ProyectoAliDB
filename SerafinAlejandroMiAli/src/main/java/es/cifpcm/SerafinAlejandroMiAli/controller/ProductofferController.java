@@ -5,7 +5,9 @@ import es.cifpcm.SerafinAlejandroMiAli.data.services.ProductofferService;
 
 
 import es.cifpcm.SerafinAlejandroMiAli.model.Carrito;
+import es.cifpcm.SerafinAlejandroMiAli.model.Municipios;
 import es.cifpcm.SerafinAlejandroMiAli.model.Productoffer;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,13 +55,25 @@ public class ProductofferController {
         return productofferService.query(vO);
     }
     @GetMapping("/filtrarPorMunicipio")
-    public String filtrarPorMunicipio(@RequestParam("idMunicipio") String idMunicipio, Model model) {
+    public String filtrarPorMunicipio(@RequestParam("idMunicipio") String idMunicipio, Model model, HttpSession session, @RequestParam(name = "vista", required = false, defaultValue = "order/pedido") String vista) {
         int municipioId = Integer.parseInt(idMunicipio);
+        session.setAttribute("selectedMunicipioId", municipioId);
         List<Productoffer> productos = productofferService.getProductosByMunicipio(municipioId);
         model.addAttribute("productos", productos);
         model.addAttribute("provincias", municipiosService.getAllProvincias());
-        return "order/pedido";
+        model.addAttribute("municipioId", municipioId);
+        List<Municipios> municipios = municipiosService.obtenerMunicipiosPorProvincia(municipioId);
+        String municipioNombre = municipios.stream().filter(m -> m.getIdMunicipio() == municipioId).findFirst().map(Municipios::getNombre).orElse(null);
+        model.addAttribute("municipioNombre", municipioNombre);
+        if (vista.equals("create")) {
+            model.addAttribute("product", new Productoffer());
+            return "create";
+        } else {
+            return "order/pedido";
+        }
     }
+
+
     @GetMapping("/añadirAlCarrito/{productId}")
     public String añadirAlCarrito(@PathVariable("productId") int productId,
                                   @ModelAttribute("carrito") Carrito carrito,
@@ -69,12 +83,16 @@ public class ProductofferController {
         model.addAttribute("carrito", carrito);
         return "redirect:/verCarrito";
     }
-
     @GetMapping("/verCarrito")
     public String verCarrito(@ModelAttribute("carrito") Carrito carrito,
                              Model model) {
         List<Productoffer> productosEnCarrito = carrito.getProductos();
         model.addAttribute("productosEnCarrito", productosEnCarrito);
         return "verCarrito";
+    }
+    @PostMapping("/producto/create")
+    public String createProduct(@ModelAttribute("product") Productoffer product) {
+        productofferService.save(product);
+        return "redirect:/producto";
     }
 }
