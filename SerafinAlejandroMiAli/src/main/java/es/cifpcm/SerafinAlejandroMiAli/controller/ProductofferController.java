@@ -74,15 +74,6 @@ public class ProductofferController {
     }
 
 
-    @GetMapping("/añadirAlCarrito/{productId}")
-    public String añadirAlCarrito(@PathVariable("productId") int productId,
-                                  @ModelAttribute("carrito") Carrito carrito,
-                                  Model model) {
-        Productoffer producto = productofferService.findById(productId);
-        carrito.agregarProducto(producto);
-        model.addAttribute("carrito", carrito);
-        return "redirect:/verCarrito";
-    }
     @GetMapping("/verCarrito")
     public String verCarrito(@ModelAttribute("carrito") Carrito carrito,
                              Model model) {

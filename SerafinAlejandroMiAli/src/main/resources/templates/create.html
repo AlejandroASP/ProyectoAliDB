@@ -75,7 +75,6 @@
         <p th:text="'Municipio seleccionado: ' + ${municipioNombre}"></p>
     </form>
 
-
     <form th:action="@{/producto/create}" th:object="${product}" method="post">
         <input type="text" th:field="*{productName}" placeholder="Nombre del producto">
         <input type="number" th:field="*{productPrice}" placeholder="Precio del producto">
@@ -83,8 +82,7 @@
         <input type="number" th:field="*{productStock}" placeholder="Stock del producto">
         <input type="submit" value="Crear Producto">
     </form>
-
-
 </div>
+
 </body>
 </html>

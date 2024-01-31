@@ -71,32 +71,33 @@
         </select>
     </form>
     <h2>Productos por Municipio</h2>
-    <table class="product-table" th:if="${productos != null}">
-        <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Imagen</th>
-            <th>Stock</th>
-            <th>Acción</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="producto : ${productos}">
-            <td th:text="${producto.productName}"></td>
-            <td th:text="${producto.productPrice}"></td>
-            <td th:text="${producto.productPicture}"></td>
-            <td th:text="${producto.productStock}"></td>
-            <td>
-                <div class="button-container">
-                    <a th:href="@{#}" class="button">Añadir al carrito</a>
-                </div>
-            </td>
-
-        </tr>
-        </tbody>
-    </table>
-
+    <form th:action="@{/agregar-al-carrito}" method="post">
+        <table class="product-table" th:if="${productos != null}">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Stock</th>
+                <th>Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="producto : ${productos}">
+                <td th:text="${producto.productName}"></td>
+                <td th:text="${producto.productPrice}"></td>
+                <td th:text="${producto.productPicture}"></td>
+                <td th:text="${producto.productStock}"></td>
+                <td>
+                    <div class="button-container">
+                        <input type="hidden" name="idProducto" th:value="${producto.productId}" />
+                        <button type="submit" class="button">Añadir al carrito</button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
 </div>
 <div class="button-container">
     <a th:href="@{/product/inicio}" class="button">Volver a la página de inicio</a>

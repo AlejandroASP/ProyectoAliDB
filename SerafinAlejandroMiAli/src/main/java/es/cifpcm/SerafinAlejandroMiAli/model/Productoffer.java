@@ -70,6 +70,7 @@ public class Productoffer implements Serializable {
     public Integer getIdMunicipio() {
         return idMunicipio;
     }
+
     public void setProvincia(Integer idProvincia) {
         this.idProvincia = idProvincia;
     }

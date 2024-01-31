@@ -50,11 +50,4 @@ public class ProductController {
         return "redirect:/producto";
     }
 
-
-    @GetMapping("/verCarrito")
-    public String verCarrito(@ModelAttribute("carrito") Carrito carrito, Model model) {
-        List<Productoffer> productosEnCarrito = carrito.getProductos();
-        model.addAttribute("productosEnCarrito", productosEnCarrito);
-        return "verCarrito";
-    }
 }
