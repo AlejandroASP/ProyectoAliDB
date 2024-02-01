@@ -1,5 +1,6 @@
 package es.cifpcm.SerafinAlejandroMiAli.controller;
 
+import es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository;
 import es.cifpcm.SerafinAlejandroMiAli.model.Carrito;
 import es.cifpcm.SerafinAlejandroMiAli.model.Productoffer;
 import es.cifpcm.SerafinAlejandroMiAli.data.services.ProductofferService;
@@ -17,24 +18,23 @@ import java.util.List;
 @Controller
 public class CarritoController {
 
-    private final Carrito carrito;
-    private final ProductofferService productService;
+    @Autowired
+    private Carrito carrito;
 
     @Autowired
-    public CarritoController(Carrito carrito, ProductofferService productService) {
-        this.carrito = carrito;
-        this.productService = productService;
-    }
+    private ProductofferRepository productofferRepository;
+
     @GetMapping("/verCarrito")
-    public String verCarrito(Model model, HttpSession session) {
-        // Obtener el carrito de la sesión del usuario
-        Carrito carrito = (Carrito) session.getAttribute("carrito");
-
-        // Pasar los productos en el carrito al modelo para mostrar en la vista del carrito
+    public String verCarrito(Model model) {
         model.addAttribute("productosEnCarrito", carrito.getProductos());
-
-        // Mostrar la vista del carrito de compras
-        return "carrito";
+        return "verCarrito";
     }
-
+    @PostMapping("/agregar-al-carrito")
+    public String agregarAlCarrito(@RequestParam("idProducto") Long idProducto) {
+        Productoffer producto = productofferRepository.findById(Math.toIntExact(idProducto)).orElse(null);
+        if (producto != null) {
+            carrito.agregarProducto(producto);
+        }
+        return "redirect:/order/pedido";
+    }
 }
