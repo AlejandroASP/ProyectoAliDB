@@ -73,14 +73,6 @@ public class ProductofferController {
         }
     }
 
-
-    @GetMapping("/verCarrito")
-    public String verCarrito(@ModelAttribute("carrito") Carrito carrito,
-                             Model model) {
-        List<Productoffer> productosEnCarrito = carrito.getProductos();
-        model.addAttribute("productosEnCarrito", productosEnCarrito);
-        return "verCarrito";
-    }
     @PostMapping("/producto/create")
     public String createProduct(@ModelAttribute("product") Productoffer product) {
         productofferService.save(product);

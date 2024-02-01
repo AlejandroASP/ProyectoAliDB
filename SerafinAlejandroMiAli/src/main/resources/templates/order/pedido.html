@@ -71,7 +71,6 @@
         </select>
     </form>
     <h2>Productos por Municipio</h2>
-    <form th:action="@{/agregar-al-carrito}" method="post">
         <table class="product-table" th:if="${productos != null}">
             <thead>
             <tr>
@@ -89,15 +88,17 @@
                 <td th:text="${producto.productPicture}"></td>
                 <td th:text="${producto.productStock}"></td>
                 <td>
-                    <div class="button-container">
-                        <input type="hidden" name="idProducto" th:value="${producto.productId}" />
-                        <button type="submit" class="button">Añadir al carrito</button>
-                    </div>
+                    <form th:action="@{/agregar-al-carrito}" method="post">
+                        <div class="button-container">
+                            <input type="hidden" name="idProducto" th:value="${producto.productId}" />
+                            <button type="submit" class="button">Añadir al carrito</button>
+                        </div>
+                    </form>
                 </td>
             </tr>
             </tbody>
         </table>
-    </form>
+
 </div>
 <div class="button-container">
     <a th:href="@{/product/inicio}" class="button">Volver a la página de inicio</a>

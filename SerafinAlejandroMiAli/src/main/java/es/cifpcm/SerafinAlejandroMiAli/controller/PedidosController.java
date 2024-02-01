@@ -52,21 +52,5 @@ public class PedidosController {
     public Page<Pedidos> query(@Valid Pedidos vO) {
         return pedidosService.query(vO);
     }
-    @PostMapping("/agregar-al-carrito")
-    public String agregarAlCarrito(@RequestParam("idProducto") int idProducto, HttpSession session) {
-        // Obtener el producto correspondiente al idProducto desde el servicio de pedidos
-        Productoffer producto = productOfferService.getById(idProducto);
 
-        // Obtener o inicializar el carrito desde la sesión del usuario
-        Carrito carrito = (Carrito) session.getAttribute("carrito");
-        if (carrito == null) {
-            carrito = new Carrito();
-            session.setAttribute("carrito", carrito);
-        }
-
-        // Agregar el producto seleccionado al carrito
-        carrito.agregarProducto(producto);
-
-        return "redirect:/order/pedido";
-    }
 }
