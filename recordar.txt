@@ -1,0 +1,13 @@
+    @GetMapping("/order/pedido")
+    public String mostrarPedido(Model model, HttpSession session) {
+        List<Provincia> provincias = provinciaRepository.findAll();
+        model.addAttribute("provincias", provincias);
+
+        Carrito carrito = (Carrito) session.getAttribute("carrito");
+        if (carrito != null) {
+            List<Municipio> municipios = municipioRepository.findByProvincia(carrito.getProvinciaSeleccionada());
+            model.addAttribute("municipios", municipios);
+        }
+
+        return "order/pedido";
+    }
