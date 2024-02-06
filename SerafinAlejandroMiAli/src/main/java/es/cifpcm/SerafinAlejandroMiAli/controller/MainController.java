@@ -7,10 +7,7 @@ import es.cifpcm.SerafinAlejandroMiAli.model.Provincias;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,8 +18,9 @@ public class MainController {
     private ProductofferService productofferService;
 
     @Autowired
-    public MainController(ProvinciasService provinciasService) {
+    public MainController(ProvinciasService provinciasService, ProductofferService productofferService) {
         this.provinciasService = provinciasService;
+        this.productofferService = productofferService;
     }
     @RequestMapping("/")
     public String inicio() {
@@ -47,5 +45,9 @@ public class MainController {
         model.addAttribute("provincias", provincias);
         return "create";
     }
-
+    @PostMapping("/eliminarProducto/{id}")
+    public String eliminarProducto(@PathVariable("id") Integer id, Model model) {
+        productofferService.delete(id);
+        return "redirect:/producto";
+    }
 }

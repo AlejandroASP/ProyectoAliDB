@@ -67,4 +67,16 @@ public class ProductofferService {
     public List<Productoffer> getProductosByMunicipio(int idMunicipio) {
         return productofferRepository.findProductosByMunicipio(idMunicipio);
     }
+    // Método para reducir el stock de un producto
+    public void reduceStock(Integer productId, Integer quantity) {
+        Productoffer product = productofferRepository.findById(productId)
+                .orElseThrow(() -> new NoSuchElementException("Producto no encontrado: " + productId));
+
+        int currentStock = product.getProductStock();
+        if (currentStock < quantity) {
+            throw new IllegalArgumentException("La cantidad a reducir excede el stock actual del producto.");
+        }
+        product.setProductStock(currentStock - quantity);
+        productofferRepository.save(product);
+    }
 }

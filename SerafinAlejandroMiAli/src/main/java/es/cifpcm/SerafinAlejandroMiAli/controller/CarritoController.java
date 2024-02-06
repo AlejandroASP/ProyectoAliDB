@@ -25,7 +25,7 @@ public class CarritoController {
     private Carrito carrito;
 
     @Autowired
-    private ProductofferRepository productofferRepository;
+    private ProductofferService productofferService;
     @Autowired
     private MunicipiosService municipiosService;
 
@@ -41,19 +41,35 @@ public class CarritoController {
     }
 
     @PostMapping("/agregar-al-carrito")
-    public String agregarAlCarrito(@RequestParam("idProducto") Long idProducto, RedirectAttributes redirectAttributes, HttpSession session) {
+    public String agregarAlCarrito(@RequestParam("idProducto") Integer idProducto, RedirectAttributes redirectAttributes, HttpSession session) {
         Carrito carrito = (Carrito) session.getAttribute("carrito");
         if (carrito == null) {
             carrito = new Carrito();
             session.setAttribute("carrito", carrito);
         }
-        Productoffer producto = productofferRepository.findById(Math.toIntExact(idProducto)).orElse(null);
-        if (producto != null) {
+
+        Productoffer producto = productofferService.getById(idProducto);
+        if (producto != null && producto.getProductStock() > 0) {
+            // Reducir el stock del producto
+            productofferService.reduceStock(idProducto, 1); // Reducir en 1 unidad
+
+            // Agregar el producto al carrito
             carrito.agregarProducto(producto);
+
+            // Obtener las provincias y agregarlas al modelo
+            List<Provincias> provincias = municipiosService.getAllProvincias();
+            redirectAttributes.addFlashAttribute("provincias", provincias);
+
+            return "redirect:/order/pedido";
+        } else {
+            // Si el stock es 0, agregar mensaje de error y provincias al modelo
+            redirectAttributes.addFlashAttribute("error", "El producto seleccionado no está disponible.");
+            List<Provincias> provincias = municipiosService.getAllProvincias();
+            redirectAttributes.addFlashAttribute("provincias", provincias);
+            return "redirect:/order/pedido";
         }
-        List<Provincias> provincias = municipiosService.getAllProvincias();
-        redirectAttributes.addFlashAttribute("provincias", provincias);
-        return "redirect:/order/pedido";
     }
+
+
 }
 

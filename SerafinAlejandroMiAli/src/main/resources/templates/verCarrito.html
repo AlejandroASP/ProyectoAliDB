@@ -41,12 +41,14 @@ h1 {
 <body>
 <h1>Carrito de Compras</h1>
 <ul th:if="${productosEnCarrito != null}">
-    <li th:each="producto : ${productosEnCarrito}">
-        <span th:text="${producto.productName + ' - ' + producto.productPrice}"></span>
+    <li th:each="entry : ${productosEnCarrito}">
+        <span th:text="${entry.key.productName + ' - Precio:' + entry.key.productPrice + ' - Cantidad: ' + entry.value}"></span>
     </li>
 </ul>
 
 <a th:href="@{/inicio}" class="button">Volver a la página de inicio</a>
-
+<div class="button-container">
+    <a th:href="@{/municipios/seleccionarProvincia}" class="button">Realizar Pedido</a>
+</div>
 </body>
 </html>
