@@ -3,6 +3,7 @@ package es.cifpcm.SerafinAlejandroMiAli.controller;
 import es.cifpcm.SerafinAlejandroMiAli.data.repositories.ProductofferRepository;
 import es.cifpcm.SerafinAlejandroMiAli.data.services.MunicipiosService;
 import es.cifpcm.SerafinAlejandroMiAli.model.Carrito;
+import es.cifpcm.SerafinAlejandroMiAli.model.Pedidos;
 import es.cifpcm.SerafinAlejandroMiAli.model.Productoffer;
 import es.cifpcm.SerafinAlejandroMiAli.data.services.ProductofferService;
 import es.cifpcm.SerafinAlejandroMiAli.model.Provincias;
@@ -37,8 +38,10 @@ public class CarritoController {
             session.setAttribute("carrito", carrito);
         }
         model.addAttribute("productosEnCarrito", carrito.getProductos());
+        model.addAttribute("pedido", new Pedidos()); // Agregar el objeto 'pedido' al modelo
         return "verCarrito";
     }
+
 
     @PostMapping("/agregar-al-carrito")
     public String agregarAlCarrito(@RequestParam("idProducto") Integer idProducto, RedirectAttributes redirectAttributes, HttpSession session) {

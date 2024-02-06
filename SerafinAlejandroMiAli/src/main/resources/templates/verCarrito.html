@@ -50,5 +50,15 @@ h1 {
 <div class="button-container">
     <a th:href="@{/municipios/seleccionarProvincia}" class="button">Realizar Pedido</a>
 </div>
+<form th:action="@{/pedidos/realizar-pedido}" method="post">
+    <button type="submit" class="button">Mandar Pedido</button>
+</form>
+<div th:if="${mensajeExito}" class="mensaje-exito">
+    <h1 th:text="${mensajeExito}"></h1>
+</div>
+<div th:if="${mensajeError}" class="mensaje-error">
+    <h1 th:text="${mensajeError}"></h1>
+</div>
+
 </body>
 </html>

@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -54,14 +55,13 @@ public class PedidosController {
     public Page<Pedidos> query(@Valid Pedidos vO) {
         return pedidosService.query(vO);
     }
-    @PostMapping
-    public String realizarPedido(Model model, HttpSession session) {
+    @PostMapping("/realizar-pedido")
+    public String realizarPedido(RedirectAttributes redirectAttributes, HttpSession session) {
         Carrito carrito = (Carrito) session.getAttribute("carrito");
-        if (carrito != null) {
+        if (carrito != null && !carrito.getProductos().isEmpty()) {
             // Crear un nuevo pedido
             Pedidos pedido = new Pedidos();
-            // Configurar los detalles del pedido, como el usuario, el precio total y la fecha
-            pedido.setUserName("NombreDelUsuario"); // Aquí deberías obtener el nombre del usuario actual, si estás autenticando usuarios
+            // Configurar los detalles del pedido, como el precio total y la fecha
             pedido.setPrecioTotal(calcularPrecioTotal(carrito));
             pedido.setFechaPedido(new Date());
             // Guardar el pedido en la base de datos
@@ -69,20 +69,20 @@ public class PedidosController {
             // Limpiar el carrito después de realizar el pedido
             carrito.limpiarCarrito();
             session.setAttribute("carrito", carrito);
-            // Redirigir a la página de inicio u otra página según sea necesario
-            return "redirect:/inicio";
+            // Agregar un mensaje de éxito como flash attribute
+            redirectAttributes.addFlashAttribute("mensajeExito", "¡Pedido realizado con éxito!");
         } else {
             // Manejar el caso en que el carrito esté vacío
-            model.addAttribute("mensaje", "No hay productos en el carrito.");
-            return "error";
+            redirectAttributes.addFlashAttribute("mensajeError", "No hay productos en el carrito para realizar pedidos.");
         }
+        return "redirect:/verCarrito"; // Redirigir a la vista de vercarrito
     }
 
     // Método para calcular el precio total del carrito
     private BigDecimal calcularPrecioTotal(Carrito carrito) {
         BigDecimal precioTotal = BigDecimal.ZERO;
         for (Map.Entry<Productoffer, Integer> entry : carrito.getProductos().entrySet()) {
-            precioTotal = precioTotal.add(entry.getKey().getProductPrice().multiply(BigDecimal.valueOf(entry.getValue())));
+            precioTotal = precioTotal.add(BigDecimal.valueOf(entry.getKey().getProductPrice()).multiply(BigDecimal.valueOf(entry.getValue())));
         }
         return precioTotal;
     }

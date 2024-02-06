@@ -17,7 +17,7 @@ public class Pedidos implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPedido;
 
-    @Column(name = "user_name", nullable = false)
+    @Column(name = "user_name", nullable = true) // Cambiar a true para permitir valores nulos
     private String userName;
 
     @Column(name = "precio_total", nullable = false)
