@@ -30,4 +30,9 @@ public class Carrito {
             productos.put(producto, cantidad); // Si no está en el carrito, se añade con la cantidad especificada
         }
     }
+
+    public void limpiarCarrito() {
+        productos.clear(); // Elimina todos los productos del carrito
+    }
+
 }
