@@ -52,4 +52,5 @@ public class GroupsService {
         return groupsRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Resource not found: " + id));
     }
+
 }

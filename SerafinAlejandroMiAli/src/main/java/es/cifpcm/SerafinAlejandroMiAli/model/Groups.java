@@ -3,6 +3,7 @@ package es.cifpcm.SerafinAlejandroMiAli.model;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "groups")
@@ -20,6 +21,8 @@ public class Groups implements Serializable {
 
     @Column(name = "description")
     private String description;
+    @OneToMany(mappedBy = "group")
+    private List<Users> users;
 
     public void setGroupId(Integer groupId) {
         this.groupId = groupId;

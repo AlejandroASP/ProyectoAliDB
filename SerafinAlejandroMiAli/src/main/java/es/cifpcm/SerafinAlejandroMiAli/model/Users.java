@@ -1,9 +1,6 @@
 package es.cifpcm.SerafinAlejandroMiAli.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
@@ -22,6 +19,9 @@ public class Users implements Serializable {
 
     @Column(name = "password", nullable = false)
     private String password;
+    @ManyToOne
+    @JoinColumn(name = "group_id", nullable = false)
+    private Groups group;
 
     public void setUserId(Integer userId) {
         this.userId = userId;
@@ -54,5 +54,8 @@ public class Users implements Serializable {
                 "userName=" + userName + '\'' +
                 "password=" + password + '\'' +
                 '}';
+    }
+    public void setGroup(Groups group) {
+        this.group = group;
     }
 }
