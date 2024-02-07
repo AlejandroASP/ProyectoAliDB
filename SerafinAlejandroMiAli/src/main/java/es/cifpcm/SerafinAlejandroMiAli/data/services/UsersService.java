@@ -1,17 +1,23 @@
 package es.cifpcm.SerafinAlejandroMiAli.data.services;
 
 import es.cifpcm.SerafinAlejandroMiAli.data.repositories.UsersRepository;
+import es.cifpcm.SerafinAlejandroMiAli.model.Groups;
 import es.cifpcm.SerafinAlejandroMiAli.model.Users;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Service
 public class UsersService{
@@ -55,4 +61,26 @@ public class UsersService{
         return usersRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Resource not found: " + id));
     }
+//    @Override
+//    @Transactional(readOnly = true)
+//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//        // Buscar el usuario por su nombre de usuario
+//        Users user = usersRepository.findByUserName(username)
+//                .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
+//
+//        // Obtener los grupos asociados al usuario
+//        List<Groups> groups = usersRepository.findGroupsByUsername(username);
+//
+//        // Construir una lista de GrantedAuthority basada en los roles de los grupos
+//        List<GrantedAuthority> authorities = groups.stream()
+//                .map(group -> new SimpleGrantedAuthority(group.getGroupName()))
+//                .collect(Collectors.toList());
+//
+//        // Construir UserDetails con la información del usuario y sus autoridades
+//        return org.springframework.security.core.userdetails.User.builder()
+//                .username(user.getUserName())
+//                .password(user.getPassword())
+//                .authorities(authorities)
+//                .build();
+//    }
 }
